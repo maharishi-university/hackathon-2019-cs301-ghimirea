@@ -17,7 +17,73 @@
     <title>Hackathon - SpaceX Launch Event</title>
     <script>
 
-            // Add your JavaScript code here
+
+        function getToSpaceX() {
+            let full_name = document.getElementById("full_name").value;
+            let email = document.getElementById("email").value;
+            let mobile_num = document.getElementById("mobile_num").value;
+            let company = document.getElementById("company").value;
+            let state = document.getElementById("state").value;
+
+            getFullName(full_name);
+            getEmail(email);
+            getPhoneNumber(mobile_num);
+            getCompanyName(company);
+            getState(state);
+            goToBarcode(full_name, email, mobile_num, company, state);
+
+        }
+
+        function getFullName(fullName) {
+            fullName[0].toUpperCase();
+            fullName1 = fullName.split(" ");
+            fullName1[1].toUpperCase();
+            return fullName1;
+        }
+
+        function getEmail(email) {
+            for (let i = 0; i < email.length; i++) {
+                if (email.includes("@") && email.includes(".")) {
+                    return email;
+                }
+            }
+            let result = "Please enter valid email address";
+            alert(result);
+        }
+
+        function getPhoneNumber(mobile_num) {
+            if (mobile_num[3].includes("-") && mobile_num[7].includes("-")) {
+                return mobile_num
+            } else {
+                result = "Please enter the phone number with the given format"
+                alert(result);
+            }
+        }
+
+        function getCompanyName(company){
+            if(company.length !== 0){
+                return company
+            }else{
+                result= "Please enter a company's name";
+                alert(company);
+            }
+        }
+
+        function getState(state){
+            if(state.length = 2){
+                state.toUpperCase();
+                return state;
+            }else{
+                result = "Please enter a 2 letters for the state"
+            }
+        }
+
+        function goToBarcode(full_name, email,mobile_num,company,state){
+            return full_name, email, mobile-num, company, state;
+        }
+
+        
+        
 
     </script>
 </head>
@@ -37,26 +103,26 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Full name</label>
-                    <input type="{{FILL_OUT}}" class="form-control" id="{{FILL_OUT}}" />
+                    <input type="text" class="form-control" id="full_name" />
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="{{FILL_OUT}}" class="form-control" id="{{FILL_OUT}}" />
+                    <input type="text" class="form-control" id="email" />
                 </div>
                 <div class="form-group">
                     <label>Mobile Number</label>
-                    <input type="{{FILL_OUT}}" class="form-control" id="{{FILL_OUT}}" placeholder="nnn-nnn-nnnn" />
+                    <input type="text" class="form-control" id="mobile_num" placeholder="nnn-nnn-nnnn" />
                 </div>
                 <div class="form-group">
                     <label>Company</label>
-                    <input type="{{FILL_OUT}}" class="form-control" id="{{FILL_OUT}}" />
+                    <input type="text" class="form-control" id="company" />
                 </div>
                 <div class="form-group">
                     <label>State</label>
-                    <input type="{{FILL_OUT}}" class="form-control" id="{{FILL_OUT}}" />
+                    <input type="text" class="form-control" id="state" />
                 </div>
                 <div class="form-group">
-                    <input type="{{FILL_OUT}}" class="btn btn-primary" value="Launch" />
+                    <input type="button" class="btn btn-primary" onclick="getToSpaceX()" value="Launch" />
                 </div>
             </div>
             <div class="col-md-6">
@@ -64,10 +130,11 @@
                     <div class="card">
                         <img src="spaceship.jpg" class="spaceship" alt="Spaceship">
                         <div class="card-body">
-                            <h5 class="card-title" id="{{FILL_OUT}}">{{FILL_OUT_FULL_NAME}}</h5>
-                            <p class="card-text" id="{{FILL_OUT}}">{{FILL_OUT_COMPANY_NAME}}, {{FILL_OUT_STATE}}</p>
-                            <p class="card-text" id="{{FILL_OUT}}">{{FILL_OUT_PHONE_NUMBER}}</p>
-                            <p class="card-text" id="{{FILL_OUT}}">{{FILL_OUT_EMAIL_ADDRESS}}</p>
+                            <h5 class="card-title" id="fill_full_name">{{FILL_OUT_FULL_NAME}}</h5>
+                            <p class="card-text" id="fill_company_state">{{FILL_OUT_COMPANY_NAME}}, {{FILL_OUT_STATE}}
+                            </p>
+                            <p class="card-text" id="phone_number">{{FILL_OUT_PHONE_NUMBER}}</p>
+                            <p class="card-text" id="email_add">{{FILL_OUT_EMAIL_ADDRESS}}</p>
                         </div>
                         <div class="card-body">
                             <img id="barcode" alt="barcode">
