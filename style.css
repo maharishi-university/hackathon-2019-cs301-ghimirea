@@ -1,0 +1,23 @@
+.company-name{
+    font-weight: bold;
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    margin-top: 50px !important;
+}
+
+#badge{
+    width: 500px;
+    margin: auto;
+}
+.spaceship{
+    width: 500px !important;
+}
+ #barcode{
+    width: 450px !important;
+}
+.card-body{
+    text-align: center;
+}
