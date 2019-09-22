@@ -24,6 +24,7 @@
             let mobile_num = document.getElementById("mobile_num").value;
             let company = document.getElementById("company").value;
             let state = document.getElementById("state").value;
+            
 
             getFullName(full_name);
             getEmail(email);
@@ -79,7 +80,10 @@
         }
 
         function goToBarcode(full_name, email,mobile_num,company,state){
-            return full_name, email, mobile_num, company, state;
+            document.getElementById("fill_full_name").innerHTML = fullName1;
+            document.getElementById("fill_company_state").innerHTML = company +", " + state;
+            document.getElementById("phone_number").innerHTML = mobile_num;
+            document.getElementById("email_add").innerHTML = email;
         }
 
         
